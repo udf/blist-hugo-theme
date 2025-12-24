@@ -169,8 +169,11 @@ DefaultContentLanguageInSubdir = true
   description = "I work on everything coding and tweet developer memes"
 
   [[params.homepage.social.icons]]
-    website = "twitter"
-    url = "https://twitter.com/"
+    website = "address"
+    url = "John Doe<br/>SomeStreet 20<br/>SomeState"
+  [[params.homepage.social.icons]]
+    website = "x"
+    url = "https://x.com/"
   [[params.homepage.social.icons]]
     website = "linkedin"
     url = "https://linkedin.com/in/"
@@ -240,3 +243,9 @@ DefaultContentLanguageInSubdir = true
   [markup.goldmark.renderer]
     # Enable to include inline HTML
     unsafe = true
+  [markup.goldmark.extensions]
+    [markup.goldmark.extensions.passthrough]
+      enable = true
+      [markup.goldmark.extensions.passthrough.delimiters]
+        block = [['\[', '\]'], ['$$', '$$']]
+        inline = [['\(', '\)']]
